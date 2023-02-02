@@ -9,6 +9,7 @@ import 'package:resume_builder_app/Screens/projects_page.dart';
 
 import 'Screens/launguage_page.dart';
 import 'Screens/skills_page.dart';
+import 'Screens/view_cv_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -365,24 +366,33 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20,bottom: 20),
-                  child: InkWell(
-                    onTap: (){
-
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.only(top: 15 ,left: 20 ,right: 20 ,bottom: 15),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.black54,
+                    padding: const EdgeInsets.only(
+                        top: 40, left: 10, right: 10),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context){
+                            return viewcv();
+                          })
+                        );
+                      },
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 12, bottom: 12, left: 30, right: 30),
+                          child: Text(
+                            "View CV",
+                            style: TextStyle(
+                                fontSize: 15, color: Colors.white),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(10)),
+                            color: Colors.black54),
                       ),
-                      child: Text("View CV",style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),),
-                    ),
-                  ),
-                ),
+                    )),
               ],
             ),
           ),
